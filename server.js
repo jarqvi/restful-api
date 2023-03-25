@@ -8,6 +8,8 @@ const ErrorHandler = require('./controllers/errorHandler.controller');
 const server = http.createServer((req, res) => {
     if (req.url == '/api/products' && req.method == 'GET') {
         ProductsController.get(req, res);
+    } else if (req.url.match(/\/api\/products\/([0-9]+)/) && req.method == 'GET') {
+        ProductsController.getById(req, res);
     } else {
         ErrorHandler.notFound(req, res);
     }

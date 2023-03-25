@@ -12,9 +12,28 @@ async function get(req, res) {
     }
 }
 
+async function getById(req, res) {
+    try {
+        const [, , , id] = await req.url.split('/');
+        const product = await ProductModel.findById(id);
+        if (!product) {
+            res.writeHead(404, { 'Content-Type': 'application/json' });
+            res.write(JSON.stringify({ message: 'Not Found.' }));
+            res.end();
+        } else {
+            res.writeHead(200, { 'Content-Type': 'application/json' });
+            res.write(JSON.stringify(product));
+            res.end();
+        }
+    } catch (err) {
+        console.log(err);
+    }
+}
+
 
 const ProductsController = {
-    get
+    get,
+    getById
 };
 
 module.exports = ProductsController;
