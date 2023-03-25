@@ -30,10 +30,29 @@ async function getById(req, res) {
     }
 }
 
+async function create(req, res) {
+    try {
+        let body = '';
+        req.on('data', chunk => {
+            body += chunk.toString();
+        });
+        req.on('end', async() => {
+            const product = { id: Date.now(), ...JSON.parse(body) };
+            const result = await ProductModel.create(product);
+            res.writeHead(201, { 'Content-Type': 'application/json' });
+            res.write(JSON.stringify(result));
+            res.end();
+        });
+    } catch (err) {
+        console.log(err);
+    }
+}
+
 
 const ProductsController = {
     get,
-    getById
+    getById,
+    create
 };
 
 module.exports = ProductsController;
