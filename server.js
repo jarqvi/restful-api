@@ -10,6 +10,8 @@ const server = http.createServer((req, res) => {
         ProductsController.get(req, res);
     } else if (req.url.match(/\/api\/products\/([0-9]+)/) && req.method == 'GET') {
         ProductsController.getById(req, res);
+    } else if (req.url == '/api/products' && req.method == 'POST') {
+        ProductsController.create(req, res);
     } else {
         ErrorHandler.notFound(req, res);
     }
