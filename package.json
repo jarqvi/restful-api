@@ -1,0 +1,29 @@
+{
+    "name": "restful-api",
+    "version": "1.0.0",
+    "description": "this is simple restful api",
+    "main": "server.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jarqvi/restful-api.git"
+    },
+    "keywords": [
+        "node",
+        "restful",
+        "api",
+        "json",
+        "js"
+    ],
+    "author": "MohammadHasan Akbari",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/jarqvi/restful-api/issues"
+    },
+    "homepage": "https://github.com/jarqvi/restful-api#readme",
+    "devDependencies": {
+        "nodemon": "^2.0.22"
+    }
+}
