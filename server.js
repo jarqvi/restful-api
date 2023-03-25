@@ -12,6 +12,8 @@ const server = http.createServer((req, res) => {
         ProductsController.getById(req, res);
     } else if (req.url == '/api/products' && req.method == 'POST') {
         ProductsController.create(req, res);
+    } else if (req.url.match(/\/api\/products\/([0-9]+)/) && req.method == 'PUT') {
+        ProductsController.update(req, res);
     } else {
         ErrorHandler.notFound(req, res);
     }

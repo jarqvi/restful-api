@@ -48,11 +48,38 @@ async function create(req, res) {
     }
 }
 
+async function update(req, res) {
+    try {
+        const [, , , id] = req.url.split('/');
+        let body = '';
+        req.on('data', chunk => {
+            body += chunk.toString();
+        });
+        req.on('end', async() => {
+            const bodyParsed = {...JSON.parse(body) };
+            const product = await ProductModel.findById(id);
+            if (!product) {
+                res.writeHead(404, { 'Content-Type': 'application/json' });
+                res.write(JSON.stringify({ message: 'Not Found.' }));
+                res.end();
+            } else {
+                const result = await ProductModel.update(id, bodyParsed);
+                res.writeHead(200, { 'Content-Type': 'application/json' });
+                res.write(JSON.stringify(result));
+                res.end();
+            }
+        });
+    } catch (err) {
+        console.log(err);
+    }
+}
+
 
 const ProductsController = {
     get,
     getById,
-    create
+    create,
+    update
 };
 
 module.exports = ProductsController;
