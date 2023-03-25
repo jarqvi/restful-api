@@ -7,7 +7,7 @@ const ErrorHandler = require('./controllers/errorHandler.controller');
 
 const server = http.createServer((req, res) => {
     if (req.url == '/api/products' && req.method == 'GET') {
-        res.end('hello world');
+        ProductsController.get(req, res);
     } else {
         ErrorHandler.notFound(req, res);
     }
