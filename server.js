@@ -9,7 +9,7 @@ const server = http.createServer((req, res) => {
     if (req.url == '/api/products' && req.method == 'GET') {
         res.end('hello world');
     } else {
-        res.end('not found');
+        ErrorHandler.notFound(req, res);
     }
 });
 
