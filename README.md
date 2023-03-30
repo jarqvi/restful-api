@@ -1,7 +1,7 @@
 # restful-api
 ---
 __Specifications:__
-- __[JavaScript](https://www.javascript.com/)__ - Program programming language.
+- __[JavaScript](https://www.javascript.com/)__ - Programming language.
 - __[NodeJS](https://nodejs.org/en)__ - Runtime used for backend.
 ---
 __You have to do a few things:__
