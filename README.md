@@ -10,5 +10,5 @@ __Specifications:__
 __You have to do a few things:__
 ##### After cloning the program, install the npm packages, enter the terminal and enter the following command.
 ```
-$ npm install
+$ npm ci
 ```
