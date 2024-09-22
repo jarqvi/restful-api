@@ -1,7 +1,7 @@
 # restful-api
 ---
 
-A simple restful-api with NodeJS
+A simple restful-api with NodeJS.
 
 __Specifications:__
 - __[JavaScript](https://www.javascript.com/)__ - Programming language.
