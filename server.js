@@ -1,5 +1,5 @@
 const http = require('http');
-const HOST = 'localhost';
+const HOST = '0.0.0.0';
 const PORT = 3000;
 const ProductsController = require('./controllers/product.controller');
 const ErrorHandler = require('./controllers/errorHandler.controller');
