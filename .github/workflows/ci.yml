@@ -1,0 +1,17 @@
+name: Check CI
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main  
+
+jobs:
+  test:
+    runs-on: ubuntu-latest 
+
+    steps:
+      - name: Example test
+        run: sleep 30 && exit 0
