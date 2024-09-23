@@ -5,5 +5,8 @@
          "name": "database",
          "mountTo": "/app/db"
       }
-   ]
+   ],
+   "node": {
+    "version": "18"
+   }
 }
