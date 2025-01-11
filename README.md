@@ -1,4 +1,4 @@
-# restful-api
+# restful-api-app
 ---
 
 A simple restful api with NodeJS.
